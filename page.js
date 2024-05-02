@@ -4,13 +4,31 @@ module.exports = {
     toField: '#to',
     phoneNumberField: '#phone',
     codeField: '#code',
+    cardNumberField: '#number.card-input',
+    cvvCodeField1: '.card-second-row #code',
+    paymentMethodField: '#paymentMethodField',
+    messageForDriverField: '#comment',
+    cvvCode: 'card-code',
     // Buttons
     callATaxiButton: 'button=Call a taxi',
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
     nextButton: 'button=Next',
     confirmButton: 'button=Confirm',
+    supportivePlanButton: 'div=Supportive',
+    linkButton: 'button=Link',
+    paymentMethodButton: '.pp-text',
+    addCardButton: '.pp-plus-container',
+    plusOneIceCreamButton: '.counter-plus',
+    iceCreamValue: '.counter-value',
+    blanketAndHandkerchiefsButton: '.switch',
+    blanketSwitch: '.switch-input',
+    orderButton: '.smart-button',
+
     // Modals
     phoneNumberModal: '.modal',
+    paymentMethodModal: '.payment-picker.modal',
+    carSearchModal: '.order-body',
+
     // Functions
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);
@@ -48,4 +66,26 @@ module.exports = {
         await codeField.setValue(code)
         await $(this.confirmButton).click()
     },
+    fillCardNumber: async function(cardNumber) {
+        const paymentMethodButton = await $(this.paymentMethodButton);
+        await paymentMethodButton.waitForDisplayed ();
+        await paymentMethodButton.click();
+        const addCardButton = await $(this.addCardButton);
+        await addCardButton.waitForDisplayed();
+        await addCardButton.click();
+        const cardNumberField = await $(this.cardNumberField);
+        await $(this.cardNumberField).waitForExist();
+        await $(this.cardNumberField).waitForDisplayed();;
+    },
+
+    fillCvvCode: async function(CvvCode) {
+       const cvvCodeField = await $(this.cvvCodeField1);
+        await cvvCodeField.setValue(CvvCode) ;
+        await cvvCodeField.waitForDisplayed();
+        const linkButton = await $(this.linkButton);
+        await linkButton.waitForDisplayed();
+        await linkButton.click();
+    },
 };
+
+
