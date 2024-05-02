@@ -92,13 +92,3 @@ describe('Create an order', () => {
 
 
 
-//  //ExtraCredit
-//     it('should show driver info in the modal', async () => {
-//         await browser.url('/')
-//         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
-//         await page.openCarSearchModal();
-//         const driverInfo = await $(page.driverInfo);
-//         await driverInfo.waitForDisplayed({timeout: 30000});
-//         await expect(driverInfo).toBeDisplayed();
-
-//     });
