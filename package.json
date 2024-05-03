@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "webdriverio": "^8.6.7"
+    "webdriverio": "^8.36.1"
   },
   "devDependencies": {
     "@wdio/cli": "^8.6.7",
