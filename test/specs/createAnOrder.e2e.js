@@ -168,7 +168,6 @@ describe('Create an order', () => {
         const phoneNumber = helper.getPhoneNumber("+1");
         await page.submitPhoneNumber(phoneNumber);
         const orderButton = await $(page.orderButton);
-        await orderButton.waitForClickable(20000);
         await orderButton.click();
         const carSearchModal = await $(page.carSearchModal);
         await expect(carSearchModal).toBeDisplayed();
