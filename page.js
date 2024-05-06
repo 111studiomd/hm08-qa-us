@@ -29,6 +29,7 @@ module.exports = {
     paymentMethodModal: '.payment-picker.modal',
     carSearchModal: '.order-body',
 
+
     // Functions
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);
